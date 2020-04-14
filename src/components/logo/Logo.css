@@ -1,0 +1,11 @@
+.div{
+    display : inline-flex;
+    justify-content: center;
+}
+
+@media only screen and (max-width : 600px){
+    .lg{
+        padding : 0px;
+        margin : 0px;
+    }
+}

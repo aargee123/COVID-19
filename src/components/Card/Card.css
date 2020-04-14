@@ -1,0 +1,13 @@
+.crd{
+    display : inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media only screen and (max-width : 600px){
+    .crd{
+        display : flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
