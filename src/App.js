@@ -28,6 +28,17 @@ class App extends React.Component{
     soreThroat : false
   }
 
+  validate = () => {
+    if(this.patient.name === '' || this.patient.email === '' || this.patient.phone === '' || this.patient.age === ''){
+      this.onRouteChange('validate');
+    }else if(this.patient.age !== Number || this.patient.phone !== Number){
+      this.onRouteChange('validate');
+    }
+    else{
+      this.onRouteChange('result');
+    }
+  }
+
   onDataChange = (event) => {
       switch(event.target.name){
         case 'name':
@@ -107,12 +118,21 @@ class App extends React.Component{
           this.state.route === 'SymptomChecker'
           ?
           <div>
-            <SymptomChecker onDataChange= { this.onDataChange } onRouteChange = {this.onRouteChange}/>
+            <SymptomChecker validate = {this.validate} onDataChange= { this.onDataChange } onRouteChange = {this.onRouteChange}/>
           </div>
           :
-          <div>
-            <Result onRouteChange = {this.onRouteChange} patient = {this.patient}/>
-          </div>
+          (
+            this.state.route === 'result'
+            ?
+            <div>
+              <Result onRouteChange = {this.onRouteChange} patient = {this.patient}/>
+            </div>
+            :
+            <div>
+              <center><h1 className = 'red'>Please Fill in All the Entries correctly</h1></center>
+              <SymptomChecker validate = {this.validate} onDataChange= { this.onDataChange } onRouteChange = {this.onRouteChange}/>
+            </div>
+          )
       )
       
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SymptomChecker = ({onDataChange, onRouteChange}) => { 
+const SymptomChecker = ({validate,onDataChange, onRouteChange}) => { 
     return(
         <div>
             <center><h2 className = 'pointer' onClick = {() => onRouteChange('home')}>SYMPTOM CHECKER</h2></center>
@@ -12,11 +12,11 @@ const SymptomChecker = ({onDataChange, onRouteChange}) => {
                         <div className="mt3">
                             <center>
                             <label className="db fw4 lh-copy f6">Name</label>
-                            <input className="pa2 input-reset ba bg-transparent w-100 measure" type="text" id="name" name = 'name' onChange = {onDataChange}/>
+                            <input className="pa2 input-reset ba bg-transparent w-100 measure" type="text" id="name" required name = 'name' onChange = {onDataChange}/>
                             <label className="db fw4 lh-copy f6">email</label>
-                            <input className="pa2 input-reset ba bg-transparent w-100 measure" type="email" name="email"  id="email" onChange = {onDataChange}/>
+                            <input className="pa2 input-reset ba bg-transparent w-100 measure" type="email" required name="email"  id="email" onChange = {onDataChange}/>
                             <label className="db fw4 lh-copy f6">Phone Number</label>
-                            <input className="pa2 input-reset ba bg-transparent w-100 measure" type="text" name="phone"  id="phone" onChange = {onDataChange}/>
+                            <input className="pa2 input-reset ba bg-transparent w-100 measure" type="text" name="phone" required id="phone" onChange = {onDataChange}/>
                             </center>
                         </div>
                     </fieldset>
@@ -90,7 +90,7 @@ const SymptomChecker = ({onDataChange, onRouteChange}) => {
                     </center>
             </article>
             <div>
-                <center><p className="f6 link dim ba bw1 ph3 pv2 mb2 dib near-black pointer" onClick = {() => onRouteChange('result')}>Submit</p></center>
+                <center><p className="f6 link dim ba bw1 ph3 pv2 mb2 dib near-black pointer" onClick = {validate}>Submit</p></center>
             </div>
         </div>
         
