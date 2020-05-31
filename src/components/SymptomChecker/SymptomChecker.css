@@ -1,0 +1,11 @@
+.inline{
+    display: inline-flex;
+}
+
+.Heading{
+    display: flex;
+    justify-content: center;
+}
+.padd{
+    padding-right: 38%;
+}

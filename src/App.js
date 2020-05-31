@@ -4,6 +4,8 @@ import Logo from './components/logo/Logo';
 import Info from './components/Info/Info';
 import Card from './components/Card/Card';
 import SymptomChecker from './components/SymptomChecker/SymptomChecker';
+import TestCenters from './components/Test Centers/TestCenters';
+import Statistics from './components/Statistics/Statistics';
 import Result from './Result/Result';
 
 class App extends React.Component{
@@ -128,10 +130,27 @@ class App extends React.Component{
               <Result onRouteChange = {this.onRouteChange} patient = {this.patient}/>
             </div>
             :
-            <div>
-              <center><h1 className = 'red'>Please Fill in All the Entries correctly</h1></center>
-              <SymptomChecker validate = {this.validate} onDataChange= { this.onDataChange } onRouteChange = {this.onRouteChange}/>
-            </div>
+            (
+              this.state.route === 'validate'
+              ?
+              <div>
+                <center><h1 className = 'red'>Please Fill in All the Entries correctly</h1></center>
+                <SymptomChecker validate = {this.validate} onDataChange= { this.onDataChange } onRouteChange = {this.onRouteChange}/>
+              </div>
+              :
+              (
+                this.state.route === 'TestCenters'
+                ?
+                <div>
+                  <TestCenters onRouteChange = {this.onRouteChange}/>
+                </div>
+                :
+                <div>
+                  <Statistics onRouteChange = {this.onRouteChange}/>
+                </div>
+              )
+            )
+
           )
       )
       

@@ -1,0 +1,8 @@
+.inline{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.padd{
+    padding-right: 45%;
+}

@@ -1,10 +1,18 @@
 import React from 'react';
+import back from '../back.png';
+import './SymptomChecker.css';
 
 const SymptomChecker = ({validate,onDataChange, onRouteChange}) => { 
     return(
         <div>
-            <center><h2 className = 'pointer' onClick = {() => onRouteChange('home')}>SYMPTOM CHECKER</h2></center>
-            <center>{`Please answer the following questions`}</center>
+            <nav className="db dt-l w-100 border-box pa3 ph5-l">
+                <p className="db dtc-l v-mid mid-gray link dim w-100 w-25-l tc tl-l mb2 mb0-l pointer grow" title="Home" onClick = {() => onRouteChange('home')}>
+                    <img src={back} className="dib w2 h2 br-100" alt="Site Name"/>
+                </p>
+                <div className="db dtc-l v-mid w-100 w-75-l tc tr-l padd">
+                    <h1>Symptom Checker </h1>
+                </div>
+            </nav>
             <article className="mw7 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10 shadow-5">
                 <form action="sign-up_submit" method="get">
                     <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
