@@ -33,8 +33,6 @@ class App extends React.Component{
   validate = () => {
     if(this.patient.name === '' || this.patient.email === '' || this.patient.phone === '' || this.patient.age === ''){
       this.onRouteChange('validate');
-    }else if(this.patient.age !== Number || this.patient.phone !== Number){
-      this.onRouteChange('validate');
     }
     else{
       this.onRouteChange('result');
@@ -65,7 +63,7 @@ class App extends React.Component{
           }
           break;
         case 'age':
-          this.patient.age = event.target.value;
+            this.patient.age = event.target.value;
           break;
         case 'contactWithPatient':
           if(event.target.id === 'Yes'){
