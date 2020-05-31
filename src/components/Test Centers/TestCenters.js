@@ -14,7 +14,7 @@ const TestCenters = ({onRouteChange}) => {
                     <p className = 'f2 b'> Govt. Approved Test Centers for COVID-19</p>
                 </div>
             </nav>
-            <article class="br3 ba b--black-10 w-50 center shadow-5">
+            <article className="br3 ba b--black-10 widt center shadow-5">
             <p className = 'f3'>1. Andhra Pradesh (4)</p>
             <ul>
                 <li className = 'f4'>- Sri Venkateswara Institute of Medical Sciences, Tirupati</li>
